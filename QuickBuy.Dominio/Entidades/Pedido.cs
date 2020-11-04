@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using QuickBuy.Dominio.Enumerados;
+
 
 namespace QuickBuy.Dominio.Entidades
 {
@@ -34,6 +36,8 @@ namespace QuickBuy.Dominio.Entidades
             if (string.IsNullOrEmpty(CEP))
                 MensagemValidacao.Add("Crítica - CEP deve estar preenchido");
         
+            if(FormaPagamentoId == (int)TipoFormaPagamentoEnum.NaoDefinido)
+                MensagemValidacao.Add("Crítica - Tipo de pagamento não definido");
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace QuickBuy.Dominio.Entidades
 {
-    class Usuario : Entidade
+    public class Usuario : Entidade
     {
         public int ID { get; set; }
 
@@ -21,7 +21,11 @@ namespace QuickBuy.Dominio.Entidades
 
         public override void Validate()
         {
-            throw new System.NotImplementedException();
+            if(string.IsNullOrEmpty(Email))
+                MensagemValidacao.Add("Crítica - Email não informado");
+
+            if(string.IsNullOrEmpty(Senha))
+                MensagemValidacao.Add("Crítica - Senha não informada");
         }
     }
 }

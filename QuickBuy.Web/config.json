@@ -1,0 +1,22 @@
+﻿/*using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace QuickBuy.Web
+{
+    public class config
+    {
+    }
+}
+*/
+{
+  "ConnectionStrings": {
+    "SqlServerConnection": "",
+    "MySqlConnection": "server=localhost;uid=root;pwd=admin;database=QuickBuyDB"
+  }
+}
+  
+
+
+

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QuickBuy.Dominio.Entidades
 {
-    class ItemPedido : Entidade
+    public class ItemPedido : Entidade
     {
         public int Id { get; set; }
         public int ProdutoId { get; set; }
@@ -12,7 +12,11 @@ namespace QuickBuy.Dominio.Entidades
 
         public override void Validate()
         {
-            throw new NotImplementedException();
+            if (ProdutoId == 0)
+                MensagemValidacao.Add("Crítica - Não foi identificado qual a referência de produto");
+
+            if(Quantidade == 0)
+                MensagemValidacao.Add("Crítica - Quantidade não informada");
         }
     }
 }
